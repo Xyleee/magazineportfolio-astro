@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+/* ============================================
+   EDITORIAL MAGAZINE DESIGN TOKENS
+   ============================================ */
+@theme {
+  /* Typography */
+  --font-family-serif: "Playfair Display", Georgia, serif;
+  --font-family-display: "Manrope", sans-serif;
+  --font-family-body: "Inter", sans-serif;
+
+  /* Editorial palette */
+  --color-paper:       #F8F7F4;
+  --color-paper-dark:  #EFEDE8;
+  --color-ink:         #111111;
+  --color-ink-mid:     #3D3D3D;
+  --color-ink-light:   #777777;
+  --color-rule:        #DEDBD5;
+
+  /* Accent — editorial red */
+  --color-accent:      #E63946;
+  --color-accent-dark: #C1121F;
+
+  /* Dark section palette */
+  --color-dark-bg:     #111111;
+  --color-dark-mid:    #1E1E1E;
+  --color-dark-border: #2E2E2E;
+  --color-dark-text:   #E8E6E1;
+  --color-dark-muted:  #888888;
+}
+
+/* ============================================
+   BASE
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background-color: #F8F7F4;
+  color: #111111;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h4, h5, h6 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+}
+
+::selection {
+  background: #E63946;
+  color: #F8F7F4;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #F8F7F4; }
+::-webkit-scrollbar-thumb { background: #DEDBD5; border-radius: 3px; }
+
+/* ============================================
+   MAGAZINE UTILITY CLASSES
+   ============================================ */
+
+/* Eyebrow / section label */
+.eyebrow {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #E63946;
+}
+
+/* Horizontal rule divider */
+.rule {
+  border: none;
+  border-top: 1px solid #DEDBD5;
+  margin: 0;
+}
+
+.rule-dark {
+  border: none;
+  border-top: 1px solid #2E2E2E;
+  margin: 0;
+}
+
+/* Tag/pill */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 2px;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* Page-width container */
+.section-container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Bold red accent word */
+.accent { color: #E63946; }
+
+/* Issue/Vol text */
+.vol-text {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #777777;
+}

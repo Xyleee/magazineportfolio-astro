@@ -1,0 +1,95 @@
+---
+// Awards.astro — Editorial awards / achievements
+// EDIT: Replace with your real awards
+
+const awards = [
+  {
+    year: "2024",
+    title: "Hackathon First Place",
+    org: "DevCity Hackathon",
+    description: "Won 1st place building a real-time collaboration tool for remote teams in 48 hours.",
+  },
+  {
+    year: "2023",
+    title: "Open Source Contributor of the Month",
+    org: "GitHub Community",
+    description: "Recognized for consistent contributions to developer tooling projects with 50+ merged PRs.",
+  },
+  {
+    year: "2023",
+    title: "Top 5% on freeCodeCamp",
+    org: "freeCodeCamp",
+    description: "Ranked in the top 5% of learners completing full-stack certification tracks.",
+  },
+  {
+    year: "2022",
+    title: "Best UI/UX Design Award",
+    org: "University Tech Fair",
+    description: "Awarded for designing and shipping an accessible job board for local students.",
+  },
+];
+---
+
+<section id="awards" class="py-20" style="background: #F8F7F4;">
+  <div class="section-container">
+
+    <!-- Section header -->
+    <div class="flex items-center gap-4 mb-10">
+      <span class="eyebrow">Awards & Achievements</span>
+      <hr class="flex-1 rule" />
+      <span class="vol-text">Page 06</span>
+    </div>
+
+    <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-start mb-12">
+      <div class="md:col-span-5">
+        <h2
+          class="text-4xl md:text-5xl leading-tight"
+          style="font-family: 'Playfair Display', serif; color: #111111;"
+        >
+          Wins worth
+          <em style="color: #E63946;">bragging about.</em>
+        </h2>
+      </div>
+    </div>
+
+    <!-- Awards as editorial list rows -->
+    <div class="flex flex-col">
+      {awards.map((award) => (
+        <div
+          class="grid grid-cols-12 gap-4 md:gap-8 py-7 hover:bg-gray-50 transition-colors duration-150"
+          style="border-top: 1px solid #DEDBD5;"
+        >
+          <!-- Year -->
+          <div class="col-span-2 md:col-span-1">
+            <span
+              class="text-sm font-black"
+              style="font-family: 'Manrope', sans-serif; color: #E63946;"
+            >
+              {award.year}
+            </span>
+          </div>
+
+          <!-- Title + description -->
+          <div class="col-span-10 md:col-span-7 flex flex-col gap-1">
+            <h3
+              class="text-lg md:text-xl font-bold"
+              style="font-family: 'Playfair Display', serif; color: #111111;"
+            >
+              {award.title}
+            </h3>
+            <p class="text-sm leading-relaxed text-gray-500" style="font-family: 'Inter', sans-serif; font-weight: 300;">
+              {award.description}
+            </p>
+          </div>
+
+          <!-- Org -->
+          <div class="col-span-12 md:col-span-4 flex md:justify-end items-start pt-1">
+            <span class="vol-text">{award.org}</span>
+          </div>
+        </div>
+      ))}
+      <hr class="rule" />
+    </div>
+
+  </div>
+</section>

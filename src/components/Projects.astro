@@ -1,0 +1,140 @@
+---
+// Projects.astro — Editorial project showcase
+// EDIT: Replace with your real projects
+
+const projects = [
+  {
+    title: "DevFlow Dashboard",
+    issue: "01",
+    description: "A real-time developer productivity dashboard with GitHub integration, task tracking, and Pomodoro timer built for indie devs.",
+    techs: ["React", "TypeScript", "TailwindCSS", "GitHub API"],
+    link: "#",
+    featured: true,
+  },
+  {
+    title: "ZinePress",
+    issue: "02",
+    description: "A minimal, magazine-style static blog generator built with Astro. Focus on typography, readability, and blazing-fast load times.",
+    techs: ["Astro", "Markdown", "CSS"],
+    link: "#",
+    featured: false,
+  },
+  {
+    title: "LinkVault",
+    issue: "03",
+    description: "A personal bookmark manager with tags, full-text search, and weekly email digests. Because browser bookmarks are chaos.",
+    techs: ["Node.js", "PostgreSQL", "React", "Express"],
+    link: "#",
+    featured: false,
+  },
+  {
+    title: "PaletteForge",
+    issue: "04",
+    description: "A browser-based color palette generator that creates harmonious schemes from a single seed color with CSS/Tailwind export.",
+    techs: ["Vanilla JS", "CSS", "HTML Canvas"],
+    link: "#",
+    featured: false,
+  },
+];
+---
+
+<section id="projects" class="py-20" style="background: #111111;">
+  <div class="section-container">
+
+    <!-- Section header -->
+    <div class="flex items-center gap-4 mb-10">
+      <span class="eyebrow" style="color: #E63946;">Projects</span>
+      <hr class="flex-1 rule-dark" />
+      <span class="vol-text" style="color: #555555;">Page 05</span>
+    </div>
+
+    <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-start mb-12">
+      <div class="md:col-span-6">
+        <h2
+          class="text-4xl md:text-5xl leading-tight"
+          style="font-family: 'Playfair Display', serif; color: #E8E6E1;"
+        >
+          Things I've
+          <em style="color: #E63946;">shipped.</em>
+        </h2>
+      </div>
+      <div class="md:col-span-6 flex items-end justify-between gap-4">
+        <p class="text-sm leading-relaxed" style="color: #888888; font-family: 'Inter', sans-serif; font-weight: 300;">
+          A selection of projects from freelance, side hustle, and obsession.
+        </p>
+        <!-- EDIT: Replace # with your GitHub URL -->
+        <a href="#" class="eyebrow whitespace-nowrap hover:opacity-70 transition-opacity" style="color: #E63946;">
+          All Work →
+        </a>
+      </div>
+    </div>
+
+    <!-- Project list — editorial article-style rows -->
+    <div class="flex flex-col">
+      {projects.map((project) => (
+        <article
+          class="group grid grid-cols-12 gap-4 md:gap-8 py-8 transition-colors duration-150 hover:bg-white/5 cursor-default"
+          style="border-top: 1px solid #2E2E2E;"
+        >
+          <!-- Issue number -->
+          <div class="col-span-1 hidden md:flex items-start pt-1">
+            <span
+              class="text-xs font-bold"
+              style="font-family: 'Manrope', sans-serif; color: #E63946; letter-spacing: 0.1em;"
+            >
+              {project.issue}
+            </span>
+          </div>
+
+          <!-- Title + description -->
+          <div class="col-span-12 md:col-span-6 flex flex-col gap-2">
+            <div class="flex items-center gap-3 flex-wrap">
+              {project.featured && (
+                <span
+                  class="tag"
+                  style="background: #E63946; color: #F8F7F4; font-size: 0.6rem; letter-spacing: 0.12em;"
+                >
+                  FEATURED
+                </span>
+              )}
+              <h3
+                class="text-xl md:text-2xl font-bold"
+                style="font-family: 'Playfair Display', serif; color: #E8E6E1;"
+              >
+                {project.title}
+              </h3>
+            </div>
+            <p class="text-sm leading-relaxed" style="color: #888888; font-family: 'Inter', sans-serif; font-weight: 300;">
+              {project.description}
+            </p>
+          </div>
+
+          <!-- Tech tags (hidden on small) -->
+          <div class="col-span-12 md:col-span-3 flex flex-wrap items-start gap-2 pt-1">
+            {project.techs.map((tech) => (
+              <span
+                class="tag"
+                style="background: transparent; color: #666666; border: 1px solid #2E2E2E; font-size: 0.65rem;"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          <!-- Link -->
+          <div class="col-span-12 md:col-span-2 flex items-start justify-end pt-1">
+            <a
+              href={project.link}
+              class="eyebrow hover:opacity-70 transition-opacity"
+              style="color: #E63946;"
+            >
+              View →
+            </a>
+          </div>
+        </article>
+      ))}
+      <hr class="rule-dark" />
+    </div>
+
+  </div>
+</section>

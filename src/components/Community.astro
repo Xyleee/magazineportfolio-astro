@@ -1,0 +1,103 @@
+---
+// Community.astro — Open source & community involvement
+// EDIT: Replace with your actual contributions
+
+const contributions = [
+  {
+    type: "Open Source",
+    title: "Contributed to Astro",
+    description: "Documentation improvements and bug fixes to the Astro framework, focusing on the Integration API.",
+    link: "#",
+  },
+  {
+    type: "Writing",
+    title: "Dev.to Author",
+    description: "12+ technical articles on web performance, CSS tricks, and Astro. 5,000+ readers reached.",
+    link: "#",
+  },
+  {
+    type: "Speaking",
+    title: "Tech Talk: 'CSS at Scale'",
+    description: "20-minute lightning talk at a local dev meetup on managing CSS in large component libraries.",
+    link: "#",
+  },
+  {
+    type: "Hackathons",
+    title: "MLH Local Hack Day",
+    description: "3 hackathons in 2023. Built a habit tracker, an accessibility checker, and a dev resource aggregator.",
+    link: "#",
+  },
+  {
+    type: "Mentoring",
+    title: "CS50 Study Group",
+    description: "Organized weekly online study groups for 20+ learners going through Harvard's CS50 curriculum.",
+    link: "#",
+  },
+  {
+    type: "Open Source",
+    title: "Maintainer: tiny-color-utils",
+    description: "Small npm utility library for color manipulation. 200+ weekly downloads, actively maintained.",
+    link: "#",
+  },
+];
+---
+
+<section id="community" class="py-20" style="background: #111111;">
+  <div class="section-container">
+
+    <!-- Section header -->
+    <div class="flex items-center gap-4 mb-10">
+      <span class="eyebrow" style="color: #E63946;">Community</span>
+      <hr class="flex-1 rule-dark" />
+      <span class="vol-text" style="color: #555555;">Page 07</span>
+    </div>
+
+    <div class="grid md:grid-cols-12 gap-8 items-start mb-12">
+      <div class="md:col-span-6">
+        <h2
+          class="text-4xl md:text-5xl leading-tight"
+          style="font-family: 'Playfair Display', serif; color: #E8E6E1;"
+        >
+          Giving back to the
+          <em style="color: #E63946;">dev ecosystem.</em>
+        </h2>
+      </div>
+    </div>
+
+    <!-- Contribution grid — 2 col editorial cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+      {contributions.map((item, i) => (
+        <div
+          class="flex flex-col gap-3 p-6 hover:bg-white/5 transition-colors duration-150"
+          style="border: 1px solid #2E2E2E; margin: -1px 0 0 -1px;"
+        >
+          <!-- Type -->
+          <span class="eyebrow" style="color: #E63946;">{item.type}</span>
+
+          <!-- Title -->
+          <h3
+            class="text-lg font-bold"
+            style="font-family: 'Playfair Display', serif; color: #E8E6E1;"
+          >
+            {item.title}
+          </h3>
+
+          <!-- Description -->
+          <p class="text-sm leading-relaxed" style="color: #888888; font-family: 'Inter', sans-serif; font-weight: 300; flex: 1;">
+            {item.description}
+          </p>
+
+          <!-- Link -->
+          <a
+            href={item.link}
+            class="eyebrow hover:opacity-70 transition-opacity mt-2"
+            style="color: #E63946;"
+          >
+            View →
+          </a>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

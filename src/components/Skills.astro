@@ -1,0 +1,78 @@
+---
+// Skills.astro — Editorial categorized skills
+// EDIT: Update skill groups and items
+
+const skillGroups = [
+  {
+    category: "Frontend",
+    skills: ["Responsive Web Design","Component Architecture","Performance Optimization","Accessibility (a11y)","CSS Animations","Design Systems"],
+  },
+  {
+    category: "Backend",
+    skills: ["REST API Design","Node.js / Express","PostgreSQL & SQL","JWT / OAuth Auth","Basic DevOps"],
+  },
+  {
+    category: "Tools & Workflow",
+    skills: ["Git & GitHub","VS Code","Figma (Design Handoff)","Agile / Scrum","CI/CD Pipelines","Docker basics"],
+  },
+  {
+    category: "Soft Skills",
+    skills: ["Technical Writing","Pair Programming","Problem Decomposition","Async Communication","Mentoring","Public Speaking"],
+  },
+];
+---
+
+<section id="skills" class="py-20" style="background: #F8F7F4;">
+  <div class="section-container">
+
+    <!-- Section header -->
+    <div class="flex items-center gap-4 mb-10">
+      <span class="eyebrow">Skills</span>
+      <hr class="flex-1 rule" />
+      <span class="vol-text">Page 04</span>
+    </div>
+
+    <div class="grid md:grid-cols-12 gap-8 items-start mb-12">
+      <div class="md:col-span-5">
+        <h2
+          class="text-4xl md:text-5xl leading-tight"
+          style="font-family: 'Playfair Display', serif; color: #111111;"
+        >
+          What I bring to
+          <em style="color: #E63946;">the table.</em>
+        </h2>
+      </div>
+      <div class="md:col-span-7 flex items-end">
+        <p class="text-sm leading-relaxed text-gray-500" style="font-family: 'Inter', sans-serif; font-weight: 300;">
+          A mix of technical depth and human skills — because the best products are built by people who code and communicate.
+        </p>
+      </div>
+    </div>
+
+    <!-- Skill columns -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border border-gray-200">
+      {skillGroups.map((group) => (
+        <div class="p-6 border-r border-gray-200 last:border-r-0">
+          <!-- Category header -->
+          <div class="eyebrow mb-5">{group.category}</div>
+
+          <!-- Skill list -->
+          <ul class="flex flex-col gap-3">
+            {group.skills.map((skill) => (
+              <li
+                class="flex items-start gap-2 text-sm leading-snug"
+                style="font-family: 'Inter', sans-serif; color: #3D3D3D; font-weight: 300;"
+              >
+                <span class="accent font-bold mt-px leading-none">–</span>
+                {skill}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<div class="section-container"><hr class="rule" /></div>

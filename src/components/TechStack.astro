@@ -1,0 +1,78 @@
+---
+// TechStack.astro — Editorial tech grid
+// EDIT: Update tech items as needed
+
+const techs = [
+  { name: "HTML",        tagline: "The skeleton of the web",         cat: "Core" },
+  { name: "CSS",         tagline: "Where art meets code",            cat: "Core" },
+  { name: "JavaScript",  tagline: "The language of the browser",     cat: "Core" },
+  { name: "TypeScript",  tagline: "JavaScript, but disciplined",     cat: "Core" },
+  { name: "Astro",       tagline: "My new obsession",                cat: "Framework" },
+  { name: "React",       tagline: "Component architecture, always",  cat: "Framework" },
+  { name: "TailwindCSS", tagline: "Utility-first & I love it",       cat: "Styling" },
+  { name: "Node.js",     tagline: "JS outside the browser",          cat: "Backend" },
+  { name: "PostgreSQL",  tagline: "Relational data, done right",     cat: "Backend" },
+  { name: "Git",         tagline: "Version control or version chaos", cat: "Tools" },
+  { name: "Figma",       tagline: "Design before you code",          cat: "Tools" },
+  { name: "Docker",      tagline: "Learning in progress",            cat: "Tools" },
+];
+---
+
+<section id="tech-stack" class="py-20" style="background: #111111;">
+  <div class="section-container">
+
+    <!-- Section header -->
+    <div class="flex items-center gap-4 mb-10">
+      <span class="eyebrow" style="color: #E63946;">Tech Stack</span>
+      <hr class="flex-1 rule-dark" />
+      <span class="vol-text" style="color: #555555;">Page 03</span>
+    </div>
+
+    <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-start mb-12">
+      <div class="md:col-span-6">
+        <h2
+          class="text-4xl md:text-5xl leading-tight"
+          style="font-family: 'Playfair Display', serif; color: #E8E6E1;"
+        >
+          My tools of
+          <em style="color: #E63946; font-style: italic;">the trade.</em>
+        </h2>
+      </div>
+      <div class="md:col-span-6 flex items-end">
+        <p class="text-sm leading-relaxed" style="color: #888888; font-family: 'Inter', sans-serif; font-weight: 300;">
+          The technologies I reach for when building real-world solutions — from interface to infrastructure.
+        </p>
+      </div>
+    </div>
+
+    <!-- Tech grid — editorial table style -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0">
+      {techs.map((tech, i) => (
+        <div
+          class="group flex flex-col gap-2 p-6 transition-colors duration-150 hover:bg-white/5 cursor-default"
+          style={`border: 1px solid #2E2E2E; margin: -1px 0 0 -1px;`}
+        >
+          <!-- Category label -->
+          <span class="eyebrow" style="color: #E63946;">{tech.cat}</span>
+
+          <!-- Tech name -->
+          <div
+            class="text-xl font-bold mt-1"
+            style="font-family: 'Playfair Display', serif; color: #E8E6E1;"
+          >
+            {tech.name}
+          </div>
+
+          <!-- Tagline -->
+          <p class="text-xs leading-relaxed" style="color: #666666; font-family: 'Inter', sans-serif;">{tech.tagline}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<!-- Section separator -->
+<div style="background: #111111;">
+  <div class="section-container"><hr class="rule-dark" /></div>
+</div>

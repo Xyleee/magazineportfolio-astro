@@ -1,0 +1,70 @@
+---
+// Navbar.astro — Editorial top bar
+// EDIT: Your name and nav links
+const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "Tech", href: "#tech-stack" },
+  { label: "Projects", href: "#projects" },
+  { label: "Awards", href: "#awards" },
+  { label: "Contact", href: "#footer" },
+];
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50"
+  style="background: #F8F7F4; border-bottom: 1px solid #DEDBD5;"
+>
+  <!-- Ticker-tape top strip -->
+  <div style="background: #111111; color: #F8F7F4;" class="text-center py-1 overflow-hidden">
+    <p class="vol-text" style="color: #888888; letter-spacing: 0.2em;">
+      <!-- EDIT: Customize this top bar message -->
+      VOL. 01 &nbsp;·&nbsp; ISSUE 2026 &nbsp;·&nbsp; AVAILABLE FOR WORK &nbsp;·&nbsp;
+      VOL. 01 &nbsp;·&nbsp; ISSUE 2026 &nbsp;·&nbsp; AVAILABLE FOR WORK
+    </p>
+  </div>
+
+  <!-- Main nav row -->
+  <div class="section-container flex items-center justify-between h-14">
+    <!-- Brand -->
+    <a
+      href="#"
+      class="font-bold text-xl tracking-tight"
+      style="font-family: 'Playfair Display', serif; color: #111111;"
+    >
+      <!-- EDIT: Your name or brand -->
+      Alex<span class="accent">.</span>
+    </a>
+
+    <!-- Desktop links -->
+    <nav class="hidden md:flex items-center gap-8">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="vol-text hover:text-red-600 transition-colors duration-150"
+          style="color: #777777;"
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Hire me CTA -->
+    <a
+      href="#footer"
+      class="hidden md:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold transition-all duration-150 hover:opacity-80"
+      style="background: #111111; color: #F8F7F4; font-family: 'Manrope', sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;"
+    >
+      Hire Me
+    </a>
+
+    <!-- Mobile icon -->
+    <button
+      class="md:hidden p-2 text-gray-500"
+      aria-label="Menu"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </button>
+  </div>
+</header>

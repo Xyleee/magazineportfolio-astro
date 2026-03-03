@@ -1,0 +1,69 @@
+---
+// FunFacts.astro — Fun facts
+// EDIT: Replace with your own
+
+const facts = [
+  { num: "01", fact: "I debug better with lo-fi music playing at exactly the right volume." },
+  { num: "02", fact: "Dark mode evangelist. Light mode gives me genuine distress." },
+  { num: "03", fact: "My code quality is directly proportional to my coffee intake." },
+  { num: "04", fact: "I once spent 4 hours debugging only to find a missing semicolon. Character building." },
+  { num: "05", fact: "I rearrange my VS Code theme at least once a month. It's called optimization." },
+  { num: "06", fact: "My keyboard shortcuts have keyboard shortcuts. I live on the command line." },
+];
+---
+
+<section id="fun-facts" class="py-20" style="background: #111111;">
+  <div class="section-container">
+
+    <!-- Section header -->
+    <div class="flex items-center gap-4 mb-10">
+      <span class="eyebrow" style="color: #E63946;">Fun Facts</span>
+      <hr class="flex-1 rule-dark" />
+      <span class="vol-text" style="color: #555555;">Page 09</span>
+    </div>
+
+    <div class="grid md:grid-cols-12 gap-8 items-start mb-12">
+      <div class="md:col-span-6">
+        <h2
+          class="text-4xl md:text-5xl leading-tight"
+          style="font-family: 'Playfair Display', serif; color: #E8E6E1;"
+        >
+          Things you didn't
+          <em style="color: #E63946;">ask for.</em>
+        </h2>
+      </div>
+    </div>
+
+    <!-- Facts as numbered editorial list -->
+    <div class="flex flex-col">
+      {facts.map((item) => (
+        <div
+          class="grid grid-cols-12 gap-4 md:gap-8 py-6 hover:bg-white/5 transition-colors duration-150"
+          style="border-top: 1px solid #2E2E2E;"
+        >
+          <!-- Number -->
+          <div class="col-span-2 md:col-span-1">
+            <span
+              class="text-sm font-black"
+              style="font-family: 'Manrope', sans-serif; color: #E63946;"
+            >
+              {item.num}
+            </span>
+          </div>
+
+          <!-- Fact -->
+          <div class="col-span-10 md:col-span-11">
+            <p
+              class="text-base md:text-lg leading-relaxed"
+              style="font-family: 'Playfair Display', serif; color: #E8E6E1; font-style: italic;"
+            >
+              "{item.fact}"
+            </p>
+          </div>
+        </div>
+      ))}
+      <hr class="rule-dark" />
+    </div>
+
+  </div>
+</section>

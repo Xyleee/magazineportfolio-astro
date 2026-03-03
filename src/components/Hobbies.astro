@@ -1,0 +1,61 @@
+---
+// Hobbies.astro — Lifestyle section
+// EDIT: Replace with your hobbies
+
+const hobbies = [
+  { emoji: "🎮", title: "Gaming", description: "Strategy and indie games. Currently replaying Hollow Knight. Again." },
+  { emoji: "🎧", title: "Music Curation", description: "Lo-fi for focus, jazz for cooking. I build playlists like I build apps — obsessively." },
+  { emoji: "📸", title: "Photography", description: "Street and urban photography. I see composition everywhere now, even in code." },
+  { emoji: "📚", title: "Reading", description: "Sci-fi novels and dev books. Currently reading 'A Philosophy of Software Design'." },
+  { emoji: "🏃", title: "Running", description: "5K three times a week. My best bug fixes happen on the road." },
+  { emoji: "🍳", title: "Cooking", description: "Recipes are algorithms. Follow the steps, then improvise. Usually works." },
+];
+---
+
+<section id="hobbies" class="py-20" style="background: #F8F7F4;">
+  <div class="section-container">
+
+    <!-- Section header -->
+    <div class="flex items-center gap-4 mb-10">
+      <span class="eyebrow">Life Beyond Code</span>
+      <hr class="flex-1 rule" />
+      <span class="vol-text">Page 08</span>
+    </div>
+
+    <div class="grid md:grid-cols-12 gap-8 items-start mb-12">
+      <div class="md:col-span-5">
+        <h2
+          class="text-4xl md:text-5xl leading-tight"
+          style="font-family: 'Playfair Display', serif; color: #111111;"
+        >
+          When I'm not
+          <em style="color: #E63946;">at the keyboard.</em>
+        </h2>
+      </div>
+    </div>
+
+    <!-- Hobby grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 border border-gray-200">
+      {hobbies.map((hobby) => (
+        <div
+          class="flex flex-col gap-3 p-6 hover:bg-gray-50 transition-colors duration-150"
+          style="border-right: 1px solid #DEDBD5; border-bottom: 1px solid #DEDBD5;"
+        >
+          <span class="text-2xl">{hobby.emoji}</span>
+          <h3
+            class="font-bold text-base"
+            style="font-family: 'Manrope', sans-serif; color: #111111;"
+          >
+            {hobby.title}
+          </h3>
+          <p class="text-sm leading-relaxed text-gray-500" style="font-family: 'Inter', sans-serif; font-weight: 300;">
+            {hobby.description}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<div class="section-container"><hr class="rule" /></div>

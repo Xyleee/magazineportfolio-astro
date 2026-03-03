@@ -1,0 +1,120 @@
+---
+// Hero.astro — Magazine cover-style hero
+// EDIT: All placeholder text below
+---
+
+<!-- Top spacing for fixed nav (ticker bar ~28px + nav ~56px = 84px) -->
+<section
+  id="hero"
+  class="pt-[84px]"
+  style="background: #F8F7F4;"
+>
+  <!-- MASTHEAD ROW -->
+  <div class="section-container pt-10 pb-4">
+    <div class="flex items-center justify-between border-b border-gray-300 pb-3 mb-3">
+      <span class="vol-text">Full-Stack Developer &amp; UI Engineer</span>
+      <span class="vol-text">Est. 2021 &nbsp;·&nbsp; Open to Opportunities</span>
+    </div>
+
+    <!-- Giant serif headline — magazine cover style -->
+    <!-- EDIT: Your headline -->
+    <div class="grid md:grid-cols-12 gap-0">
+
+      <!-- Left: cover headline (8 cols) -->
+      <div class="md:col-span-8 border-r border-gray-300 pr-0 md:pr-10 py-8">
+        <h1
+          class="text-6xl md:text-8xl lg:text-9xl leading-none"
+          style="font-family: 'Playfair Display', serif; font-weight: 900; color: #111111;"
+        >
+          Building<br />
+          <em style="color: #E63946;">delightful</em><br />
+          web things.
+        </h1>
+
+        <!-- Intro -->
+        <!-- EDIT: Your intro paragraph -->
+        <p
+          class="mt-8 text-base md:text-lg leading-relaxed max-w-xl"
+          style="color: #3D3D3D; font-family: 'Inter', sans-serif; font-weight: 300;"
+        >
+          I'm <strong style="font-weight: 600; color: #111111;">Alex</strong> — a full-stack developer who
+          obsesses over clean interfaces, performant code, and the ideal font pairing.
+          I turn complex requirements into elegant, accessible experiences.
+        </p>
+
+        <!-- CTA row -->
+        <div class="flex flex-wrap items-center gap-4 mt-8">
+          <a
+            href="#projects"
+            class="inline-flex items-center gap-2 px-6 py-3 font-semibold text-sm transition-all duration-150 hover:opacity-80"
+            style="background: #111111; color: #F8F7F4; font-family: 'Manrope', sans-serif;"
+          >
+            View Projects →
+          </a>
+          <!-- EDIT: Replace # with your CV URL -->
+          <a
+            href="#"
+            class="inline-flex items-center gap-2 px-6 py-3 font-semibold text-sm border border-gray-300 transition-all duration-150 hover:border-gray-500"
+            style="color: #111111; font-family: 'Manrope', sans-serif;"
+          >
+            Download CV ↓
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Editorial sidebar (4 cols) -->
+      <div class="hidden md:flex md:col-span-4 flex-col pl-8 py-8 gap-6">
+
+        <!-- Stats block — magazine pull-out numbers -->
+        <div class="flex flex-col gap-5">
+          <!-- EDIT: Your stats -->
+          {[
+            { num: "3+", label: "Years of Experience" },
+            { num: "20+", label: "Projects Shipped" },
+            { num: "8+", label: "Technologies Mastered" },
+          ].map((stat) => (
+            <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+              <div
+                class="text-5xl font-black leading-none"
+                style="font-family: 'Playfair Display', serif; color: #E63946;"
+              >
+                {stat.num}
+              </div>
+              <div class="mt-1 vol-text">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Cover tag -->
+        <div
+          class="mt-auto border border-gray-300 p-4"
+        >
+          <div class="eyebrow mb-2">Currently</div>
+          <!-- EDIT: Your status -->
+          <p class="text-sm text-gray-700 leading-relaxed" style="font-family: 'Inter', sans-serif;">
+            Available for freelance & full-time roles. Building side projects with Astro & TypeScript.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Full-width rule -->
+  <div class="section-container">
+    <hr class="rule" />
+  </div>
+
+  <!-- Sub-navigation / section preview strip -->
+  <div class="section-container py-4">
+    <div class="flex flex-wrap gap-x-8 gap-y-2 items-center">
+      <span class="eyebrow mr-4">In this issue</span>
+      {["About", "Tech Stack", "Skills", "Projects", "Awards", "Community", "Hobbies"].map((s) => (
+        <span class="text-xs text-gray-500" style="font-family: 'Manrope', sans-serif;">— {s}</span>
+      ))}
+    </div>
+  </div>
+  <div class="section-container">
+    <hr class="rule" />
+  </div>
+</section>
